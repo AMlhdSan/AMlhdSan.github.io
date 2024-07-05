@@ -1,59 +1,91 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网课分享站</title>
-    <style>
-        body {
-            background-image: url('背景图片的URL');
-            background-size: cover;
-            font-family: '宋体', sans-serif;
-        }
-        h1 {
-            text-align: center;
-            font-weight: bold;
-            font-size: 2em;
-            margin-top: 20%;
-        }
-        .download-btn {
-            display: block;
-            width: 200px;
-            height: 50px;
-            margin: 0 auto;
-            background-color: white;
-            color: blue;
-            font-weight: bold;
-            font-size: 1.5em;
-            line-height: 50px;
-            text-align: center;
-            text-decoration: none;
-            border: 2px solid blue;
-            border-radius: 10px;
-        }
-        .left-link {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-weight: bold;
-            color: black;
-            text-decoration: none;
-        }
-        .right-arrow {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            font-size: 3em;
-            color: black;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-    <a href="https://amlhdsan.github.io/" class="left-link">缪语博的主页</a>
-    <h1>网课分享站</h1>
-    <a href="自定义链接的URL" class="download-btn">下载Download</a>
-    <a href="另一个链接的URL" class="right-arrow">→</a>
-</body>
+<!DOCTYPE html>  
+<html lang="zh">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>网课分享站下载页面</title>  
+<style>  
+    body, html {  
+        height: 100%;  
+        margin: 0;  
+        font-family: Arial, sans-serif; /* 备用字体 */  
+        background-image: url('https://amlhdsan.github.io/share/background.jpg'); /* 替换为您的图片URL */  
+        background-size: cover;  
+        background-position: center;  
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
+        flex-direction: column;  
+        text-align: center;  
+        color: #000;  
+    }  
+  
+    .text-bold-song {  
+        font-family: 'SimSun', sans-serif; /* 尽可能使用宋体 */  
+        font-weight: bold;  
+    }  
+  
+    .header {  
+        position: absolute;  
+        left: 20px;  
+        top: 20px;  
+        transition: text-shadow 0.3s ease;  
+    }  
+  
+    .header:hover {  
+        text-shadow: 0 0 10px #fff;  
+    }  
+  
+    .main-title {  
+        font-size: 36px;  
+        margin-top: 50px;  
+    }  
+  
+    .download-btn {  
+        background-color: #fff;  
+        color: #0000ff;  
+        padding: 10px 20px;  
+        border: none;  
+        border-radius: 5px;  
+        cursor: pointer;  
+        font-family: 'SimSun', sans-serif;  
+        font-size: 16px;  
+        transition: box-shadow 0.3s ease;  
+    }  
+  
+    .download-btn:hover {  
+        box-shadow: 0 0 10px #0000ff;  
+    }  
+  
+    .right-link {  
+        position: absolute;  
+        right: 20px;  
+        top: 20px;  
+        color: #000;  
+        text-decoration: none;  
+        font-family: 'SimSun', sans-serif;  
+        font-weight: bold;  
+        transition: text-shadow 0.3s ease;  
+    }  
+  
+    .right-link:hover {  
+        text-shadow: 0 0 10px #fff;  
+    }  
+  
+    .right-link::after {  
+        content: ' &#8594;'; /* 添加向右箭头 */  
+    }  
+</style>  
+</head>  
+<body>  
+  
+<a href="https://amlhdsan.github.io/" class="header text-bold-song">缪语博的主页</a>  
+  
+<div class="main-title text-bold-song">网课分享站</div>  
+  
+<button class="download-btn">下载Download｜提取吗：1234</button>  
+  
+<a href="https://pan.baidu.com/s/1Dm1ZUqJZiuIZjGbAdtzfdg?pwd=1234" class="right-link text-bold-song">自定义链接</a>  
+  
+</body>  
 </html>
