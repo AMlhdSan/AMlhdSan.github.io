@@ -1,101 +1,80 @@
-<!DOCTYPE html>  
-<html lang="zh">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>网课分享站下载页面</title>  
-<style>  
-    body, html {  
-        height: 100%;  
-        margin: 0;  
-        font-family: Arial, sans-serif; /* 备用字体 */  
-        background-image: url('https://amlhdsan.github.io/share/background.jpg');  
-        background-size: cover;  
-        background-position: center;  
-        display: flex;  
-        align-items: center;  
-        justify-content: center;  
-        flex-direction: column;  
-        text-align: center;  
-        overflow: hidden;  
-    }  
-  
-    .text-bold-song {  
-        font-family: 'SimSun', sans-serif; /* 尽可能使用宋体 */  
-        font-weight: bold;  
-        color: white;  
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 增加文字阴影以增强可读性 */  
-    }  
-  
-    .header {  
-        position: absolute;  
-        left: 20px;  
-        top: 20px;  
-        font-size: 24px; /* 增大字体 */  
-        color: white;  
-        text-decoration: none;  
-        transition: transform 0.3s ease, text-shadow 0.3s ease;  
-    }  
-  
-    .header:hover {  
-        transform: scale(1.05);  
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);  
-    }  
-  
-    .main-title {  
-        font-size: 4vw; /* 使用视口单位以适应不同屏幕尺寸，但保持较大的字体 */  
-        min-font-size: 36px; /* 最小字体大小 */  
-        margin-bottom: 20px;  
-    }  
-  
-    .download-btn {  
-        background-color: #add8e6; /* 浅蓝色背景 */  
-        color: white;  
-        padding: 15px 30px;  
-        border: none;  
-        border-radius: 5px;  
-        cursor: pointer;  
-        font-family: 'SimSun', sans-serif;  
-        font-size: 18px;  
-        transition: transform 0.3s ease, box-shadow 0.3s ease;  
-    }  
-  
-    .download-btn:hover {  
-        transform: translateY(-5px);  
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);  
-    }  
-  
-    .right-link {  
-        position: absolute;  
-        right: 20px;  
-        top: 50%;  
-        transform: translateY(-50%);  
-        color: white;  
-        text-decoration: none;  
-        font-family: 'SimSun', sans-serif;  
-        font-weight: bold;  
-        font-size: 20px;  
-        display: flex;  
-        align-items: center;  
-    }  
-  
-    .right-link::before {  
-        content: '→';  
-        margin-right: 5px;  
-        font-size: 24px; /* 箭头稍大一些 */  
-        font-weight: bold;  
-    }  
-  
-    .right-link:hover {  
-        transform: translateX(5px);  
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);  
-    }  
-</style>  
-</head>  
-<body>  
-  
-<a href="https://amlhdsan.github.io/" class="header text-bold-song">缪语博的主页</a>  
-  
-<div class="main-title text-bold-song">网课分享站</div>  
-  
-<a href="https://pan.baidu.com/s/1Dm1ZUqJZiuIZjGbAdtzfdg?pwd=1234" class="download-btn">下载
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网课分享站</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '宋体', sans-serif;
+            background: url('https://amlhdsan.github.io/share/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 3em;
+        }
+        .download-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #005f99;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .download-button:hover {
+            background-color: #007acc;
+            transform: scale(1.1);
+        }
+        .top-left-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s;
+        }
+        .top-left-link:hover {
+            transform: scale(1.1);
+        }
+        .right-middle-link {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-size: 2em;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s;
+        }
+        .right-middle-link:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="https://amlhdsan.github.io/" class="top-left-link">缪语博的主页</a>
+    <div class="container">
+        <h1>网课分享站</h1>
+        <a href="https://pan.baidu.com/s/1Dm1ZUqJZiuIZjGbAdtzfdg?pwd=1234" class="download-button">下载 Download｜提取码：1234</a>
+    </div>
+    <a href="https://amlhdsan.github.io/share/other.html" class="right-middle-link">→</a>
+</body>
+</html>
