@@ -1,55 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>缪语博的主页</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
             margin: 0;
             padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: '宋体', sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 50px;
         }
         h1 {
+            font-weight: bold;
+            font-size: 3em;
+            color: white;
+            background-color: black;
+            padding: 20px;
+            display: inline-block;
+        }
+        .content {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+        .contact {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .contact a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact a:hover {
             color: #007acc;
         }
-        .contact-info {
-            margin-top: 20px;
+        .share-link {
+            margin-top: 30px;
+            font-size: 1.5em;
+            display: block;
+            text-decoration: none;
+            color: black;
+            transition: transform 0.3s, color 0.3s;
         }
-        .social-icons {
-            margin-top: 20px;
-        }
-        .social-icons a {
-            margin-right: 10px;
+        .share-link:hover {
+            transform: scale(1.1);
             color: #007acc;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>缪语博的主页</h1>
-        <p>Hello! 我是缪语博, 一个铜陵市第十五中学的毕业生.</p>
-        <h2>Contact Information</h2>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:AM_lhd@outlook.com">AM_lhd@outlook.com</a></p>
-            <p>GitHub: <a href="https://github.com/AMlhdSan">github.com/AMlhdSan</a></p>
-            <p>QQ: 3698974141</p>
-        </div>
-        <h2>Blog</h2>
-        <p>Check out my latest blog posts on my <a href="https://www.zhihu.com/people/50-15-97-52-51">知乎</a>.</p>
-        <div class="social-icons">
-            <a href="https://github.com/AMlhdSan"><img src="github-icon.png" alt="GitHub"></a>
-        </div>
+    <h1>缪语博的主页</h1>
+    <div class="content">
+        <p>Hello! 我是缪语博，一个铜陵市第十五中学的毕业生，铜陵一中的准高一新生。</p>
+        <p style="font-size: 1.8em; margin-top: 20px;">联系方式：</p>
+        <p>Email: AM_lhd@outlook.com，AM_lhd@25wm31.onmicrosoft.com，AMlhdSan@gmail.com，AMlhdSan@icloud.com（都不常用，请换一种方式联系）</p>
+        <p>QQ：3698974141</p>
+        <p>bilibili：<a href="https://space.bilibili.com/1197495893" target="_blank">@缪语博</a></p>
+        <p>知乎：<a href="https://www.zhihu.com/people/50-15-97-52-51" target="_blank">@缪语博</a></p>
     </div>
+    <a href="https://amlhdsan.github.io/share/index.html" class="share-link">缪语博的高中网课分享站</a>
 </body>
 </html>
