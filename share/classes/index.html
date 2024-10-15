@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缪语博的高中网课分享站</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://amlhdsan.github.io/share/classes/background.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: '宋体', serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        .subtitle {
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+        .description {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            max-width: 80%;
+            text-align: left;
+            color: yellow;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .download-button {
+            margin: 10px 0;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: black;
+            background-color: #add8e6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .download-button:hover {
+            transform: scale(1.1);
+        }
+        .home-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: yellow;
+            transition: transform 0.3s;
+        }
+        .home-link:hover {
+            transform: scale(1.1);
+        }
+        .arrow-link {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: yellow;
+            transform: translateY(-50%);
+            transition: transform 0.3s;
+            writing-mode: vertical-rl;
+        }
+        .arrow-link:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="https://amlhdsan.github.io/" class="home-link">←缪语博的主页</a>
+    <h1>网课分享站</h1>
+    <div class="subtitle">下载download</div>
+    <div class="button-container">
+        <div class="description">可以转存和下载，文件体积较大，不买百度网盘会员可能会下载很长时间。此链接适合大体积下载，适合网盘会员用户。另外，有一些高速下载的方法，可以上百度搜pandownload。</div>
+        <a href="https://pan.baidu.com/s/1Dm1ZUqJZiuIZjGbAdtzfdg?pwd=1234">
+            <button class="download-button">百度网盘｜提取码：1234</button>
+        </a>
+        <div class="description">可以下载和预览（直接看），不可转存，文件体积较大，可能会下载很长时间。此链接适合在线观看，单集下载。</div>
+        <a href="https://25wm31-my.sharepoint.com/:f:/g/personal/am_lhd_25wm31_onmicrosoft_com/EisUBlWDtYtPm6Vnyu0VIVcBiuvyviK6mBKHtugSF1wAYA">
+            <button class="download-button">OneDrive</button>
+        </a>
+    </div>
+    <a href="https://amlhdsan.github.io/share/classes/other.html" class="arrow-link">下载内容详细介绍➔</a>
+</body>
+</html>
