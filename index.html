@@ -6,65 +6,106 @@
     <title>缪语博的主页</title>
     <style>
         body {
+            background-image: url('https://amlhdsan.github.io/share/background.jpg');
+            background-size: cover;
+            font-family: 'SimSun', 'Consolas', sans-serif;
+            color: black;
             margin: 0;
-            padding: 0;
-            font-family: '宋体', sans-serif;
-            color: gold;
-            text-align: left;
-            padding: 50px;
-            background-image: url("https://amlhdsan.github.io/background.jpeg");
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-size: 20px;
         }
         h1 {
+            text-align: center;
             font-weight: bold;
-            font-size: 3em;
-            margin-top: 50px;
+            font-size: 36px;
         }
-        .content {
-            margin-top: 20px;
-            font-size: 1.2em;
+        .intro {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
         }
-        .contact {
-            margin-top: 20px;
-            font-size: 1.5em;
-        }
-        .contact a {
-            color: black;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .contact a:hover {
-            color: #007acc;
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+            margin: 20px 0;
         }
         .button {
-            display: inline-block;
-            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
             padding: 15px 30px;
-            font-size: 1.5em;
-            color: gold;
-            background-color: green;
+            text-align: center;
+            transition: background 0.3s, transform 0.3s;
+            font-family: 'Consolas', sans-serif;
+            cursor: pointer;
+            backdrop-filter: blur(15px);
+            font-size: 20px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
+            color: black;
         }
         .button:hover {
-            background-color: lightgreen;
+            background: rgba(255, 255, 255, 0.8);
             transform: scale(1.05);
+        }
+        .contact-section, .site-section {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            margin: 20px 0;
+            align-items: center;
+        }
+        .contact-item, .site-item {
+            cursor: pointer;
+            backdrop-filter: blur(15px);
+            transition: background 0.3s, transform 0.3s;
+            font-size: 20px;
+            margin: 0 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .contact-item:hover, .site-item:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(1.05);
+        }
+        .link {
+            text-decoration: none;
+            color: black;
         }
     </style>
 </head>
 <body>
+
     <h1>缪语博的主页</h1>
-    <div class="content">
-        <p>Hello! 我是缪语博，一个铜陵市第一中学的高一菜鸡。</p>
-        <p style="font-size: 1.8em; margin-top: 20px;">联系方式：</p>
-        <p>Email:AMlhdSan@gmail.com</p>
-        <p>Twitter：<a href="https://x.com/myb_AMlhd" target="_blank">@myb_AMlhd</a></p>
-        <p>QQ：3698974141</p>
-        <p>bilibili：<a href="https://space.bilibili.com/1197495893" target="_blank">@缪语博</a></p>
-        <p>知乎：<a href="https://www.zhihu.com/people/50-15-97-52-51" target="_blank">@缪语博</a></p>
+    <div class="intro">Hello! 我是缪语博，一个铜陵市第一中学的高一菜鸡。</div>
+
+    <div class="button-container">
+        <a href="https://amlhdsan.github.io/share/index.html" class="button">我的分享站</a>
+        <a href="https://amlhdsan.github.io/articles/index.html" class="button">我的Blog</a>
     </div>
-    <a href="https://amlhdsan.github.io/share/classes/index.html" class="button">缪语博的高中网课分享站</a>
-    <br>
-    <a href="https://amlhdsan.github.io/articles/index.html" class="button">我的博文中心</a>
+
+    <div class="contact-section">
+        <div class="contact-item">我的联系方式</div>
+        <div class="contact-item">
+            <div>e-mail: <a href="mailto:amlhdsan@gmail.com" class="link">amlhdsan@gmail.com</a></div>
+            <div>QQ：3698974141</div>
+        </div>
+    </div>
+
+    <div class="site-section">
+        <div class="site-item">我的各站</div>
+        <div class="site-item">
+            <div><a href="https://x.com/myb_AMlhd" class="link">X：@myb_AMlhd</a></div>
+            <div><a href="https://space.bilibili.com/1197495893" class="link">Bilibili：@缪语博</a></div>
+            <div><a href="https://blog.csdn.net/MYB20091111" class="link">CSDN：@缪语博</a></div>
+            <div><a href="https://www.zhihu.com/people/50-15-97-52-51" class="link">知乎：@缪语博</a></div>
+            <div><a href="https://github.com/AMlhdSan" class="link">Github：@AMlhdSan</a></div>
+        </div>
+    </div>
+
 </body>
 </html>
