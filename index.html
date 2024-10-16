@@ -35,22 +35,23 @@
             margin: 20px 0;
         }
         .button {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             padding: 15px 30px;
             text-align: center;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.4s, transform 0.3s ease-in-out;
             font-family: 'Consolas', sans-serif;
             cursor: pointer;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             font-size: 20px;
             text-decoration: none;
             color: black;
         }
         .button:hover {
             background: rgba(255, 255, 255, 0.8);
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
+
         .contact-section, .site-section {
             display: flex;
             justify-content: center;
@@ -58,23 +59,76 @@
             margin: 20px 0;
             align-items: center;
         }
+
         .contact-item, .site-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item div, .site-item div {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin: 5px 0;
+            transition: background 0.4s, transform 0.3s ease-in-out, backdrop-filter 0.4s;
+            backdrop-filter: blur(10px);
             cursor: pointer;
-            backdrop-filter: blur(15px);
-            transition: background 0.3s, transform 0.3s;
-            font-size: 20px;
-            margin: 0 10px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 10px;
-            padding: 5px;
         }
-        .contact-item:hover, .site-item:hover {
-            background: rgba(255, 255, 255, 0.7);
-            transform: scale(1.05);
+
+        .contact-item div:hover, .site-item div:hover {
+            background: rgba(255, 255, 255, 0.9); /* 背景更“实” */
+            transform: scale(1.1); /* 悬停时放大效果 */
+            backdrop-filter: blur(20px); /* 增强毛玻璃效果 */
         }
+
         .link {
             text-decoration: none;
             color: black;
+        }
+
+        /* 手机端优化 */
+        @media only screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+                padding: 10px;
+                height: auto;
+            }
+            h1 {
+                font-size: 28px;
+                margin-top: 20px;
+            }
+            .intro {
+                font-size: 20px;
+                margin: 10px 0;
+            }
+            .button-container {
+                flex-direction: column;
+                width: 100%;
+            }
+            .button {
+                width: 80%;
+                margin: 10px 0;
+                padding: 10px 20px;
+                font-size: 18px;
+            }
+            .contact-section, .site-section {
+                flex-direction: column;
+                width: 100%;
+                margin: 10px 0;
+            }
+            .contact-item, .site-item {
+                align-items: flex-start;
+                width: 100%;
+                gap: 5px;
+            }
+            .contact-item div, .site-item div {
+                width: 100%;
+                padding: 8px 10px;
+                font-size: 18px;
+            }
         }
     </style>
 </head>
