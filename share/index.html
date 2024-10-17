@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的分享站</title>
+    <style>
+        body {
+            background-image: url('https://amlhdsan.github.io/share/background.jpeg');
+            background-size: cover;
+            font-family: 'SimSun', 'Consolas', sans-serif;
+            color: black;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-size: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 36px;
+        }
+        .home-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: yellow;
+            transition: transform 0.3s;
+        }
+        .home-link:hover {
+            transform: scale(1.1);
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .button {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 15px 30px;
+            text-align: center;
+            transition: background 0.4s, transform 0.3s ease-in-out;
+            font-family: 'Consolas', sans-serif;
+            cursor: pointer;
+            backdrop-filter: blur(20px);
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .button:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* 手机端优化 */
+        @media only screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+                padding: 10px;
+                height: auto;
+            }
+            h1 {
+                font-size: 28px;
+                margin-top: 20px;
+            }
+            .button-container {
+                width: 80%;
+                margin: 20px 0;
+            }
+            .button {
+                padding: 10px 20px;
+                font-size: 18px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://amlhdsan.github.io/" class="home-link">←缪语博的主页</a>
+
+    <h1>我的分享站</h1>
+
+    <div class="button-container">
+        <a href="https://amlhdsan.github.io/share/classes/index.html" class="button">高中网课分享站</a>
+    </div>
+
+</body>
+</html>
