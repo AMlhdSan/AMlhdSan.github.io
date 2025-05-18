@@ -2,96 +2,320 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>辅礽密卷</title>
     <style>
+        :root {
+            --primary-color: #007ACC;
+            --hover-color: #005F99;
+            --text-color: #333;
+            --bg-overlay: rgba(255, 255, 255, 0.85);
+            --animation-time: 1.2s;
+        }
+        
         body {
             margin: 0;
             font-family: '宋体', serif;
             background-image: url('https://amlhdsan.github.io/frmj/background.jpg');
             background-size: cover;
             background-position: center;
-            color: white;
+            background-attachment: fixed; /* 确保背景图片固定不动 */
+            color: var(--text-color);
+            overflow-x: hidden;
+            position: relative;
         }
+        
+        body::before {
+            content: '';
+            position: fixed; /* 固定定位，确保背景不会随滚动移动 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://amlhdsan.github.io/frmj/background.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -10; /* 确保在内容之下 */
+        }
+        
+        .header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2); /* 半透明遮罩而非重复的背景图 */
+            z-index: -1;
+        }
+        
         h1 {
             text-align: center;
-            margin-top: 40px;
-            font-size: 36px;
-            color: white;
+            font-size: 4rem;
+            margin: 0;
+            padding: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid var(--primary-color);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp var(--animation-time) forwards;
         }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp var(--animation-time) forwards;
+            animation-delay: 0.3s;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: var(--primary-color);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.5s, bounce 2s infinite 1.5s;
+        }
+        
         .container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
-            margin: 60px 40px;
-            background-color: rgba(0, 0, 0, 0.5); /* 调整背景为黑色半透明 */
+            margin: 80px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        
+        .card {
+            flex: 1 1 300px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
             padding: 30px;
-            border-radius: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
         }
-        .column {
-            flex: 1;
-            margin: 0 20px;
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
         }
-        .column h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: white;
+        
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--primary-color);
         }
-        .column p {
-            font-size: 16px;
+        
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .card:hover h2::after {
+            width: 100px;
+        }
+        
+        .card p {
+            font-size: 1rem;
             line-height: 1.8;
-            color: white;
         }
+        
         .buttons {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-top: 10px;
+            margin-top: 20px;
         }
+        
         .buttons a {
             text-align: center;
-            padding: 10px;
-            background-color: #007ACC;
+            padding: 12px;
+            background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .buttons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
         .buttons a:hover {
-            background-color: #005F99;
+            background-color: var(--hover-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 122, 204, 0.3);
+        }
+        
+        .buttons a:hover::before {
+            left: 100%;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 80px;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .card {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>辅礽密卷</h1>
-    <div class="container">
-        <div class="column">
-            <h2>关于我们</h2>
-            <p>一群来自铜陵一中2024级的学生</p>
+    <div class="header">
+        <h1>辅礽密卷</h1>
+        <p class="subtitle">上课认真听，下课刷抖音</p>
+        <div class="scroll-down">
+            ⌄
         </div>
-        <div class="column">
+    </div>
+    
+    <div class="container">
+        <div class="card" data-delay="0">
+            <h2>关于我们</h2>
+            <p>一群来自铜陵一中2024级的学生，充满激情与创造力，致力于打造高质量的学习资源，助力同学们在数学领域的探索与进步。</p>
+        </div>
+        
+        <div class="card" data-delay="200">
             <h2>成员情况</h2>
             <p>
-                主编：缪语博；<br>
-                副主编：陈宇涵；<br>
-                出题团队（排名不分先后）：<br>
-                陈宇涵，缪语博，丁许萌，高扬，窦世杰，胡展博，钱汇泉，朱靖宇，赵瑞琪，周仁龙；<br>
-                指导教师：Eric-熊
+                <strong>主编：</strong>缪语博<br>
+                <strong>副主编：</strong>陈宇涵<br>
+                <strong>出题团队（排名不分先后）：</strong><br>
+                陈宇涵，缪语博，丁许萌，高扬，窦世杰，胡展博，钱汇泉，朱靖宇，赵瑞琪，周仁龙<br>
+                <strong>指导教师：</strong>Eric-熊
             </p>
         </div>
-        <div class="column">
+        
+        <div class="card" data-delay="400">
             <h2>我们的作品</h2>
             <div class="buttons">
                 <a href="https://amlhdsan.github.io/frmj/1.pdf">辅礽三角一纸通</a>
                 <a href="https://amlhdsan.github.io/frmj/2.pdf">2026辅礽高中数学联赛</a>
             </div>
         </div>
-        <div class="column">
+        
+        <div class="card" data-delay="600">
             <h2>联系我们</h2>
             <p>
-                官方QQ群：657875550；<br>
-                投稿&联系邮箱：amlhdsan@gmail.com
+                <strong>官方QQ群：</strong>657875550<br>
+                <strong>投稿&联系邮箱：</strong>amlhdsan@gmail.com
             </p>
         </div>
     </div>
+    
+    <div class="footer">
+        <p>© 2025 辅礽密卷团队 版权所有</p>
+        <p>上课认真听，下课刷抖音</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 平滑滚动
+            document.querySelector('.scroll-down').addEventListener('click', function() {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 卡片淡入动画
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.animation = `fadeInUp 1s forwards`;
+                        }, parseInt(entry.target.dataset.delay) || 0);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
